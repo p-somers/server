@@ -3,10 +3,12 @@
 		<title>Aww yeah</title>
 	</head>
 	<body>
-		<div>Sweeeet</div>
-		</br>
 		<?php
-		  echo phpinfo();
+		  include "./UserTable.php";
+		  $users = new UserTable();
+		  $result = $users->allUsers();
+		  echo "<div>Username: ".$result['name']."</div>";
+      echo password_hash("rasmuslerdorf", PASSWORD_DEFAULT)."</br>";
 		?>
 	</body>
 </html>
