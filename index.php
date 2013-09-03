@@ -6,9 +6,8 @@
 		<?php
 		  include "./UserTable.php";
 		  $users = new UserTable();
+		  //$users->addUser("Peter","MacBook1-9");
 		  $result = $users->allUsers();
-		  echo "<div>Username: ".$result['name']."</div>";
-      echo password_hash("rasmuslerdorf", PASSWORD_DEFAULT)."</br>";
 		?>
 	</body>
 </html>
