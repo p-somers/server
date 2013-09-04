@@ -1,0 +1,35 @@
+@font-face{
+  font-family: 'Lovelo Line Bold';
+  src:url('./fonts/Lovelo Line Bold.otf');
+}
+body{
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+#top{
+  font-family: 'Lovelo Line Bold';
+  left: 10%;
+}
+#wrapper{
+  height: 100%;
+  width:  100%;
+  background-color: #9E3B33;/*#E9B64D;*/
+  overflow-x: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#content {
+  width:  80%;
+  left: 10%;
+  margin: 0px auto;
+  overflow: visible;
+  position: absolute;
+  padding-left: 25px;
+  color: #E3AE57;
+  border-top-style: solid;
+  border-right-style:solid;
+  border-bottom-style:hidden;
+  border-left-style:solid;
+  border-width:5px;
+}

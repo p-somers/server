@@ -11,7 +11,7 @@ class UserTable {
       $stmt  = UserTable::getDBH()->prepare($query);
       $stmt->execute();
       $users = array();
-      for($stmt as $row) {
+      foreach($stmt as $row) {
         $user = array();
         $user['name']=$row['name'];
         $user['id']=$row['id'];
