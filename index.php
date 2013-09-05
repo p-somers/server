@@ -13,21 +13,31 @@
 	<body>
 	  <div id="wrapper">
 	    <div id="top">
-	      <span>Awesome</span>
+	      <span>
+	        <?php
+	          $words = array('awesome','superb','sublime','elegant','splendid');
+	          $index = rand(0,count($words)-1);
+	          echo $words[$index];
+	        ?>
+	      </span>
 	    </div>
-      <div id="content">Hi
-        <!--h3>Users:</h3>
+      <div id="content_wrapper">
+        <div id="content">Hi
         <?php
           include "./UserTable.php";
           $userTable = new UserTable();
+          
+          //echo $userTable::generateId();
+          
           //$users->addUser("Peter","MacBook1-9");
           $users = $userTable->allUsers();
           foreach($users as $user) {
             foreach($user as $key=>$val) {
-              echo "<div>$key: $val</div>";
+              //echo "<div>$key: $val</div>";
             }
           }
-        ?> -->
+        ?>
+        </div>
 		  </div>
 		</div>
 	</body>

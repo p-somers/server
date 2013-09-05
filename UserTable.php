@@ -1,10 +1,18 @@
 <?php
 class UserTable {
-  private static $dbh = null;
-  private static $host = "127.0.01";
-  private static $user = "root";
+  private static $dbh      = null;
+  private static $host     = "127.0.01";
+  private static $user     = "root";
   private static $database = "data";
-  private static $table = "users";
+  
+  private static $table       = "users";
+  private static $col_id      = "id";
+  private static $col_session = "session";
+  private static $col_created = "created";
+  private static $days_to_exp = 30;
+  
+  private static $auth = "PersistantAuth";
+  
   public function allUsers() {
     try {
       $query = "select * from ".self::$table;
@@ -30,6 +38,9 @@ class UserTable {
     $stmt->bindParam(':password',$password);
     return $stmt->execute();
   }
+  public function login($uid){
+    
+  }
 	public static function getDBH() {
 		if (!self::$dbh) {
       include "./hidden/DBPassword.php";
@@ -39,5 +50,18 @@ class UserTable {
     }
 		return self::$dbh;
 	}
+	public static function generateId(){
+    $fp = @fopen('/dev/urandom','rb');
+    $pr_bits = '';
+    if ($fp !== FALSE) {
+        $pr_bits .= @fread($fp,128);
+        echo "-- ".base64_encode($pr_bits)." --";
+        @fclose($fp);
+    }
+    if (strlen($pr_bits) < 128) {
+      return -1;
+    }
+    return $pr_bits;
+  }
 }
 ?>
