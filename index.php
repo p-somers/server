@@ -17,7 +17,7 @@
 	        <?php
 	          $words = array('awesome','superb','sublime','elegant','splendid');
 	          $index = rand(0,count($words)-1);
-	          echo $words[$index];
+	          echo trim($words[$index]);
 	        ?>
 	      </span>
 	    </div>
@@ -36,6 +36,8 @@
               //echo "<div>$key: $val</div>";
             }
           }
+          $blah = $userTable->getUserId("Peter");
+          var_dump($blah);
         ?>
         </div>
 		  </div>
