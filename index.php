@@ -1,7 +1,13 @@
 <html>
 	<head>
 	  <link rel="stylesheet" type="text/css" href="./main.css">
-		<title>Aww yeah</title>
+		<title>
+      <?php
+        $words = array('awesome','superb','sublime','elegant','splendid');
+        $index = rand(0,count($words)-1);
+        echo trim($words[$index]);
+      ?>
+    </title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
     <script src="./main.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -12,14 +18,8 @@
 	</head>
 	<body>
 	  <div id="wrapper">
-	    <div id="top">
-	      <span>
-	        <?php
-	          $words = array('awesome','superb','sublime','elegant','splendid');
-	          $index = rand(0,count($words)-1);
-	          echo trim($words[$index]);
-	        ?>
-	      </span>
+	    <div id="header">
+	      <span>cool stuff</span>
 	    </div>
       <div id="content_wrapper">
         <div id="content">Hi
@@ -36,11 +36,12 @@
               //echo "<div>$key: $val</div>";
             }
           }
-          $blah = $userTable->getUserId("Peter");
+          $blah = $userTable->getUserId("Peters");
           var_dump($blah);
         ?>
         </div>
 		  </div>
+		  <div id="footer">Hi</div>
 		</div>
 	</body>
 </html>

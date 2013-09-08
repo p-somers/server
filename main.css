@@ -6,7 +6,7 @@ body{
   overflow-x: hidden;
   overflow-y: auto;
 }
-#top{
+#header{
   font-family: 'Lovelo Line Bold';
   left: 10%;
 }
@@ -20,18 +20,24 @@ body{
   left: 0;
 }
 #content_wrapper{
-  width:  80%;
-  left: 10%;
-  margin: 0px auto;
+  width: 80%;
+  left:  10%;
+  margin: 0px;
   overflow: visible;
-  position: absolute;
+  position: relative;
   color: #E3AE57;
   border-top-style: solid;
-  border-right-style:solid;
-  border-bottom-style:hidden;
-  border-left-style:solid;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-bottom-style: hidden;
   border-width:5px;
 }
 #content{
   margin:25px;
+}
+#footer{
+  width: 80%;
+  clear:left;
+  position:absolute;
+  left:10%;
 }

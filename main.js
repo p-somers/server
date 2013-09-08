@@ -7,10 +7,10 @@ var Init = {
     var h_w_margin_ratio = 1;
     var width = $('#content_wrapper').position().left*h_w_margin_ratio;
     var border_width = parseInt($('#content_wrapper').css('border-left-width'));
-    $('#top').height(width-30);
+    $('#header').height(width-30);
     console.log(border_radius+width);
-    $('#top').css('margin-left',width+border_radius+'px');
-    $('#top').css('font-size',width+10*h_w_margin_ratio+'px');
+    $('#header').css('margin-left',width+border_radius+'px');
+    $('#header').css('font-size',width+10*h_w_margin_ratio+'px');
     
     var total_height = parseInt($('#wrapper').height());
     $('#content_wrapper').height(total_height-width);
@@ -18,12 +18,19 @@ var Init = {
     var midground  = '#DC3D24';//red
     var background = '#232B2B';//grey
     var foreground = '#232B2B';
-    $('#top').css('color',midground);
+    $('#header').css('color',midground);
     $('#content_wrapper').css('border-color',midground);
     $('#content_wrapper').css('background-color',foreground);
     $('#wrapper').css('background-color',background);
-    console.log(border_width);
-    Init.makeUnselectable('#top');
+    $('#footer').css('background-color',midground);
+
+    var total_wrapper_width = parseInt($('#content_wrapper').css('width'))
+                            + parseInt($('#content_wrapper').css('border-right'))
+                            + parseInt($('#content_wrapper').css('border-right'));
+    console.log(total_wrapper_width);
+    $('#footer').width(total_wrapper_width);
+
+    Init.makeUnselectable('#header');
   },
   
   makeUnselectable: function(selector){
