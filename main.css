@@ -37,7 +37,23 @@ body{
 }
 #footer{
   width: 80%;
-  clear:left;
-  position:absolute;
-  left:10%;
+  clear: left;
+  position: absolute;
+  left: 10%;
+}
+#menu{
+  list-style-type: none;
+  height: 50px;
+  margin: 0;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 5px;
+  padding: 0;
+  vertical-align:middle;
+}
+.menu_item{
+  vertical-align:middle;
+  height: inherit;
+  display: table-cell;
+  text-align: center;
 }

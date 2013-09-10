@@ -22,26 +22,28 @@
 	      <span>cool stuff</span>
 	    </div>
       <div id="content_wrapper">
-        <div id="content">Hi
-        <?php
-          include "./UserTable.php";
-          $userTable = new UserTable();
-          
-          //echo $userTable::generateId();
-          
-          //$users->addUser("Peter","MacBook1-9");
-          $users = $userTable->allUsers();
-          foreach($users as $user) {
-            foreach($user as $key=>$val) {
-              //echo "<div>$key: $val</div>";
+        <div id="menu">
+          <div class="menu_item">Main</div><!--div class="space"></div-->
+          <div class="menu_item">About</div>
+          <div class="menu_item">...stuff.</div>
+          <div class="menu_item">Contact Me</div>
+        </div>
+        <div id="content">
+          <?php
+            include "./UserTable.php";
+            $userTable = new UserTable();
+            $users = $userTable->allUsers();
+            foreach($users as $user) {
+              foreach($user as $key=>$val) {
+                //echo "<div>$key: $val</div>";
+              }
             }
-          }
-          $blah = $userTable->getUserId("Peters");
-          var_dump($blah);
-        ?>
+            //$blah = $userTable->getUserId("Peters");
+            //var_dump($blah);
+          ?>
         </div>
 		  </div>
-		  <div id="footer">Hi</div>
+		  <div id="footer">Random coding stuff by Peter Somers</div>
 		</div>
 	</body>
 </html>
