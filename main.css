@@ -10,6 +10,11 @@ body{
   font-family: 'Lovelo Line Bold';
   left: 10%;
 }
+#user{
+  float:right;
+  margin-right:10px;
+  margin-top:10px;
+}
 #wrapper{
   height: 100%;
   width:  100%;

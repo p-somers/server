@@ -10,6 +10,7 @@
     </title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
     <script src="./main.js" type="text/javascript"></script>
+    <script src="./Init.js" type="text/javascript"></script>
     <script type="text/javascript">
       $(document).ready(function() {
         Init.init();
@@ -18,12 +19,13 @@
 	</head>
 	<body>
 	  <div id="wrapper">
+	      <span id="user"><a href="javascript:Init.showLogin();">login</a></span>
 	    <div id="header">
 	      <span>cool stuff</span>
 	    </div>
       <div id="content_wrapper">
         <div id="menu">
-          <div class="menu_item">Main</div><!--div class="space"></div-->
+          <div class="menu_item">Main</div>
           <div class="menu_item">About</div>
           <div class="menu_item">...stuff.</div>
           <div class="menu_item">Contact Me</div>
