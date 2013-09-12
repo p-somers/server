@@ -1,6 +1,7 @@
 <html>
 	<head>
 	  <link rel="stylesheet" type="text/css" href="./main.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 		<title>
       <?php
         $words = array('awesome','superb','sublime','elegant','splendid');
@@ -8,7 +9,8 @@
         echo trim($words[$index]);
       ?>
     </title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <script src="./main.js" type="text/javascript"></script>
     <script src="./Init.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -19,7 +21,8 @@
 	</head>
 	<body>
 	  <div id="wrapper">
-	      <span id="user"><a href="javascript:Init.showLogin();">login</a></span>
+	      <span id="user"><a href="javascript:showLogin();">login</a></span>
+	      <div id="login_dialog"></div>
 	    <div id="header">
 	      <span>cool stuff</span>
 	    </div>

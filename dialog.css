@@ -1,0 +1,13 @@
+/*
+ui-dialog: The outer container of the dialog.
+ui-dialog-titlebar: The title bar containing the dialog's title and close button.
+ui-dialog-title: The container around the textual title of the dialog.
+ui-dialog-titlebar-close: The dialog's close button.
+ui-dialog-content: The container around the dialog's content. This is also the element the widget was instantiated with.
+ui-dialog-buttonpane: The pane that contains the dialog's buttons. This will only be present if the buttons option is set.
+ui-dialog-buttonset: The container around the buttons themselves.
+*/
+.no-close .ui-dialog-titlebar-close {
+  display: none;
+}
+

@@ -19,6 +19,9 @@ var Init = {
     var footer_height = parseInt($('#footer').height());
     var total_height = parseInt($('#wrapper').height());
     $('#content_wrapper').height(total_height-width-footer_height);  
+    
+    $('#login_dialog').dialog({width:'50%',dialogClass:'login'});
+    $('#login_dialog').dialog('close');
      
     this.setColors();
     this.setUpHeader();
