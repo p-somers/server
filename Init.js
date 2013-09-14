@@ -10,6 +10,7 @@ var Init = {
   border_radius : 40,
   menu_item_connector_height : 5,
   h_w_margin_ratio : 1,
+  login_dialog_ratio : 0.2,
   
   init: function(){
     $('#content_wrapper').css('border-top-right-radius',this.border_radius+'px');
@@ -18,16 +19,14 @@ var Init = {
     var width = $('#content_wrapper').position().left*this.h_w_margin_ratio;
     var footer_height = parseInt($('#footer').height());
     var total_height = parseInt($('#wrapper').height());
-    $('#content_wrapper').height(total_height-width-footer_height);  
+    $('#content_wrapper').height(total_height-width-footer_height);    
     
-    $('#login_dialog').dialog({width:'50%',dialogClass:'login'});
-    $('#login_dialog').dialog('close');
-     
     this.setColors();
     this.setUpHeader();
     this.setUpMenu($('#menu').width());
-    this.setUpFooter();
+    this.setUpDialogs();
     this.makeUnselectable('#header');
+    this.setUpFooter();
   },
   setColors: function(){
     var midground  = this.red;
@@ -74,14 +73,51 @@ var Init = {
     }
   },
   setUpFooter: function(){
-    var total_wrapper_width = parseInt($('#content_wrapper').css('width'));
+    var total_wrapper_width = parseInt($('#content_wrapper').width());
                             //+ parseInt($('#content_wrapper').css('border-right'))
                             //+ parseInt($('#content_wrapper').css('border-right'));
                             //Taking the borders into account isn't necessary because
                             //the padding in the footer makes up for it.
-    $('#footer').width(total_wrapper_width);
     var wrapper_border_width = parseInt($('#content_wrapper').css('border-left'));
+    //console.log(total_wrapper_width);
+    //console.log(2*wrapper_border_width);
+    //console.log(total_wrapper_width+2*wrapper_border_width);
+    $('#footer').width(total_wrapper_width);//+2*wrapper_border_width);
     $('#footer').css('padding', wrapper_border_width);
+  },
+  setUpDialogs: function(){
+    /**
+     * ui-dialog: The outer container of the dialog.
+     * ui-dialog-titlebar: The title bar containing the dialog's title and close button.
+     * ui-dialog-title: The container around the textual title of the dialog.
+     * ui-dialog-titlebar-close: The dialog's close button.
+     * ui-dialog-content: The container around the dialog's content. This is also the element the widget was instantiated with.
+     * ui-dialog-buttonpane: The pane that contains the dialog's buttons. This will only be present if the buttons option is set.
+     * ui-dialog-buttonset: The container around the buttons themselves.
+     */
+    var side_length = $(document).width()*this.login_dialog_ratio;
+    var options = {
+      width:side_length,
+      height:'auto',//side_length/2,
+      dialogClass:'login',
+      closeOnEscape:true,
+      modal:true,
+      resizable:false
+    }
+    var border_width = $('#content_wrapper').css('border-top-width');
+    var border_color = $('#content_wrapper').css('border-color');
+    $('#login_dialog').dialog(options);
+    $('#login_dialog').dialog('close');
+    $('#login_dialog label').css('color',this.foreground);
+    $('.ui-dialog').css('border-width',border_width);
+    $('.ui-dialog').css('border-color',border_color);
+    $('#login_dialog').css('background-color:',this.dark_red);
+    $('.ui-dialog-titlebar-close').css('display','none');
+    $(document).on("click",'.ui-widget-overlay', function(e){
+      //From http://stackoverflow.com/a/15810916/1955559
+      var dialogAria = $(this).next().attr('aria-describedby');        
+      $('#'+dialogAria).dialog("close");
+    });
   },
   setMenuItemGaps: function(){
     var spaces = $('.space');

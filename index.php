@@ -1,7 +1,13 @@
+<?php
+  include './Session.php';
+  Session-
+?>
 <html>
 	<head>
+    <!--link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"-->
+    <link href='http://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700,900' rel='stylesheet' type='text/css'>
 	  <link rel="stylesheet" type="text/css" href="./main.css">
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+	  <link rel="stylesheet" type="text/css" href="./dialog.css">
 		<title>
       <?php
         $words = array('awesome','superb','sublime','elegant','splendid');
@@ -22,7 +28,11 @@
 	<body>
 	  <div id="wrapper">
 	      <span id="user"><a href="javascript:showLogin();">login</a></span>
-	      <div id="login_dialog"></div>
+	      <div id="login_dialog">
+	        <label>Username:</label><input type="text" id="username"></input></br>
+	        <label>Password:</label><input type="password" id="password"></input>
+	        <button type="button" onClick="javascript:login();">ok</button>
+	      </div>
 	    <div id="header">
 	      <span>cool stuff</span>
 	    </div>

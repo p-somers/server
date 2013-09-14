@@ -15,7 +15,14 @@ body{
   margin-right:10px;
   margin-top:10px;
 }
-.login{color:#aaa;}
+#login_dialog{
+  font-family:'Cinzel Decorative', cursive;
+  font-weight:bold;
+}
+#login_dialog button{
+  font-size:0.75em;
+  font-family:'Cinzel Decorative', cursive;
+}
 #wrapper{
   height: 100%;
   width:  100%;
