@@ -1,7 +1,3 @@
-<?php
-  include './Session.php';
-  Session-
-?>
 <html>
 	<head>
     <!--link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"-->
@@ -22,6 +18,10 @@
     <script type="text/javascript">
       $(document).ready(function() {
         Init.init();
+        //$(window).unload(function(event){onUnload();return "hi";});
+        window.onbeforeunload=function(){
+          //return onUnload();//Used for recording session lengths
+        }
       });
     </script>
 	</head>
@@ -44,6 +44,11 @@
           <div class="menu_item">Contact Me</div>
         </div>
         <div id="content">
+          <p>Hi Sam! Basically none of this is functional yet. I might 
+             have some time to work on it soon though.
+             </br>
+             The code is <a href="https://github.com/p-somers/server">here</a> 
+             for anyone who's interested.</p>
           <?php
             include "./UserTable.php";
             $userTable = new UserTable();
