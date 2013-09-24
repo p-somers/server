@@ -27,6 +27,8 @@ var Init = {
     this.setUpDialogs();
     this.makeUnselectable('#header');
     this.setUpFooter();
+    
+    $('.menu_item').on('click',function(e){Init.menuButtonClicked(e.target.id);});
   },
   setColors: function(){
     var midground  = this.red;
@@ -144,5 +146,8 @@ var Init = {
     $(selector).css('-moz-user-select', '-moz-none');
     $(selector).css('-ms-user-select', 'none');
     $(selector).css('user-select', 'none');
+  },
+  menuButtonClicked: function(id){
+    console.log(id);
   }
 }

@@ -38,13 +38,13 @@
 	    </div>
       <div id="content_wrapper">
         <div id="menu">
-          <div class="menu_item">Main</div>
-          <div class="menu_item">About</div>
-          <div class="menu_item">...stuff.</div>
-          <div class="menu_item">Contact Me</div>
+          <div class="menu_item" id="main">Main</div>
+          <div class="menu_item" id="about">About</div>
+          <div class="menu_item" id="stuff">...stuff.</div>
+          <div class="menu_item" id="contact">Contact Me</div>
         </div>
         <div id="content">
-          <p>Hi Sam! Basically none of this is functional yet. I might 
+          <p>Basically none of this is functional yet. I might 
              have some time to work on it soon though.
              </br>
              The code is <a href="https://github.com/p-somers/server">here</a> 
