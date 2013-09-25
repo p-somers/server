@@ -1,6 +1,6 @@
 @font-face{
   font-family: 'Lovelo Line Bold';
-  src:url('./fonts/Lovelo Line Bold.otf');
+  src:url('../fonts/Lovelo Line Bold.otf');
 }
 body{
   overflow-x: hidden;

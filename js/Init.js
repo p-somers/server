@@ -4,6 +4,8 @@ var Init = {
   grey : '#232B2B',
   foreground : '#232B2B',
   dark_red : '#9E3B33',
+  button_selected : '#802F29',
+  button_unselected : '#9E3B33',
   
   //important numbers, in pixels
   gap_width : 5,
@@ -28,7 +30,8 @@ var Init = {
     this.makeUnselectable('#header');
     this.setUpFooter();
     
-    $('.menu_item').on('click',function(e){Init.menuButtonClicked(e.target.id);});
+    $('.menu_item').on('mousedown',function(e){Init.menuButtonPressed(e.target.id);});
+    $('.menu_item').on('mouseup',function(e){Init.menuButtonReleased(e.target.id);});
   },
   setColors: function(){
     var midground  = this.red;
@@ -147,15 +150,19 @@ var Init = {
     $(selector).css('-ms-user-select', 'none');
     $(selector).css('user-select', 'none');
   },
-  menuButtonClicked: function(id){
+  menuButtonPressed: function(id){
+    $('#'+id).css('background-color',Init.button_selected);
+  },
+  menuButtonReleased: function(id){
+    $('#'+id).css('background-color',Init.button_unselected);
     var parameters={
       type : 'post',
-      url : './getContents.php',
-      data : {target:id+'.html'},
+      url : './php/getContents.php',
+      data : {target:'html/'+id+'.html'},
       context : this,
       complete : function(res){$('#content').html(res.responseText);},
       async: false
     }
-    $.ajax(parameters).responseText;
+    $.ajax(parameters);
   }
 }
