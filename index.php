@@ -45,7 +45,7 @@
         </div>
         <div id="content">
           <?php
-            include("php/getContents.php");//hi me
+            include("php/getContents.php");
             if(isset($_GET['target'])) {
               echoFile(filter_input(INPUT_GET,'target'));
             }
