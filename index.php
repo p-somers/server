@@ -2,8 +2,8 @@
 	<head>
     <!--link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"-->
     <link href='http://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700,900' rel='stylesheet' type='text/css'>
-	  <link rel="stylesheet" type="text/css" href="./main.css">
-	  <link rel="stylesheet" type="text/css" href="./dialog.css">
+	  <link rel="stylesheet" type="text/css" href="./css/main.css">
+	  <link rel="stylesheet" type="text/css" href="./css/dialog.css">
 		<title>
       <?php
         $words = array('awesome','superb','sublime','elegant','splendid');
@@ -13,8 +13,8 @@
     </title>
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    <script src="./main.js" type="text/javascript"></script>
-    <script src="./Init.js" type="text/javascript"></script>
+    <script src="./js/main.js" type="text/javascript"></script>
+    <script src="./js/Init.js" type="text/javascript"></script>
     <script type="text/javascript">
       $(document).ready(function() {
         Init.init();
@@ -45,7 +45,7 @@
         </div>
         <div id="content">
           <?php
-            include("getContents.php");
+            include("php/getContents.php");
             if(isset($_GET['target'])) {
               echoFile(filter_input(INPUT_GET,'target'));
             }
