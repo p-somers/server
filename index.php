@@ -44,22 +44,13 @@
           <div class="menu_item" id="contact">Contact Me</div>
         </div>
         <div id="content">
-          <p>Basically none of this is functional yet. I might 
-             have some time to work on it soon though.
-             </br>
-             The code is <a href="https://github.com/p-somers/server">here</a> 
-             for anyone who's interested.</p>
           <?php
-            include "./UserTable.php";
-            $userTable = new UserTable();
-            $users = $userTable->allUsers();
-            foreach($users as $user) {
-              foreach($user as $key=>$val) {
-                //echo "<div>$key: $val</div>";
-              }
+            include("getContents.php");
+            if(isset($_GET['target'])) {
+              echoFile(filter_input(INPUT_GET,'target'));
             }
-            //$blah = $userTable->getUserId("Peters");
-            //var_dump($blah);
+            else
+              echoFile('main.html');
           ?>
         </div>
 		  </div>

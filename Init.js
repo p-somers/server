@@ -148,6 +148,14 @@ var Init = {
     $(selector).css('user-select', 'none');
   },
   menuButtonClicked: function(id){
-    console.log(id);
+    var parameters={
+      type : 'post',
+      url : './getContents.php',
+      data : {target:id+'.html'},
+      context : this,
+      complete : function(res){$('#content').html(res.responseText);},
+      async: false
+    }
+    $.ajax(parameters).responseText;
   }
 }
