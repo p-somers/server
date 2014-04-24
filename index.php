@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="./css/dialog.css">
     <title>
       <?php
+        //Display a random word as the title
         $words = array('awesome','superb','sublime','elegant','splendid');
         $index = rand(0,count($words)-1);
         echo trim($words[$index]);
