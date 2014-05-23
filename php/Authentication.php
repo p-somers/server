@@ -14,6 +14,9 @@ class Authentication{
   
   private static $cookie_name = "auth_cookie";
   
+  /**
+   * Logs a user in, setting their session kay in the database and cookie.
+   */
   public static function login($uid){
     $key = self::generateKey();
     
@@ -29,6 +32,10 @@ class Authentication{
     setcookie(self::$cookie_name,$cookieVal,time()*86400*self::$days_to_exp);
     return $cookieVal;
   }
+  /**
+   * This function generates a random number, currently being used to 
+   * store a session key.
+   */
   public static function generateKey(){
     $fp = @fopen('/dev/urandom','rb');
     $pr_bits = '';
