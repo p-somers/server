@@ -1,5 +1,9 @@
 var Init = {
-  //colors
+  /**
+   * colors
+   * It's a lot easier to just set these initially in javascript because they need
+   * to be changed later anyway when certain events happen.
+   */
   red : '#DC3D24',
   grey : '#232B2B',
   foreground : '#232B2B',
@@ -33,6 +37,10 @@ var Init = {
     $('.menu_item').on('mousedown',function(e){Init.menuButtonPressed(e.target.id);});
     $('.menu_item').on('mouseup',function(e){Init.menuButtonReleased(e.target.id);});
   },
+  
+  /**
+   * This function sets the various elements on the screen to their respective colors.
+   */
   setColors: function(){
     var midground  = this.red;
     var background = this.grey;
@@ -45,6 +53,9 @@ var Init = {
     $('#footer').css('background-color',midground);
     $('#menu').css('background-color',background); 
   },
+  /**
+   * Sets the total and border width of the header, along with the margin and font size
+   */
   setUpHeader: function(){
     var width = $('#content_wrapper').position().left*this.h_w_margin_ratio;
     var border_width = parseInt($('#content_wrapper').css('border-left-width'));
@@ -52,6 +63,12 @@ var Init = {
     $('#header').css('margin-left',width+this.border_radius+'px');
     $('#header').css('font-size',width+10*this.h_w_margin_ratio+'px');
   },
+  /**
+   * Sets the appropriate width of each menu element.
+   * It also makes the left corners of the first item and the right corners of the last element round,
+   * and puts a gap between each menu item.
+   * Note: menu_length is in pixels.
+   */
   setUpMenu: function(menu_length){
     var num_menu_items = -1;
     num_menu_items = parseInt($('.menu_item').length);
@@ -66,7 +83,8 @@ var Init = {
         if( index==0 ){
           $(this).css('border-bottom-left-radius',border_radius);
           $(this).css('border-top-left-radius',border_radius);
-        }else if( index == num_menu_items-1 ){
+        }
+        if( index == num_menu_items-1 ){
           $(this).css('border-bottom-right-radius',border_radius);
           $(this).css('border-top-right-radius',border_radius);
         }
@@ -77,19 +95,21 @@ var Init = {
       Init.setMenuItemGaps();
     }
   },
+  /**
+   * Prepares the footer of the page, setting it's width and padding.
+   */
   setUpFooter: function(){
     var total_wrapper_width = parseInt($('#content_wrapper').width());
-                            //+ parseInt($('#content_wrapper').css('border-right'))
-                            //+ parseInt($('#content_wrapper').css('border-right'));
                             //Taking the borders into account isn't necessary because
                             //the padding in the footer makes up for it.
     var wrapper_border_width = parseInt($('#content_wrapper').css('border-left'));
-    //console.log(total_wrapper_width);
-    //console.log(2*wrapper_border_width);
-    //console.log(total_wrapper_width+2*wrapper_border_width);
-    $('#footer').width(total_wrapper_width);//+2*wrapper_border_width);
+    $('#footer').width(total_wrapper_width);
     $('#footer').css('padding', wrapper_border_width);
   },
+  
+  /**
+   * 
+   */
   setUpDialogs: function(){
     /**
      * ui-dialog: The outer container of the dialog.
@@ -103,7 +123,7 @@ var Init = {
     var side_length = $(document).width()*this.login_dialog_ratio;
     var options = {
       width:side_length,
-      height:'auto',//side_length/2,
+      height:'auto',
       dialogClass:'login',
       closeOnEscape:true,
       modal:true,
@@ -124,6 +144,10 @@ var Init = {
       $('#'+dialogAria).dialog("close");
     });
   },
+  
+  /**
+   * This function adds the little lines between menu items for the extra little visual flare.
+   */
   setMenuItemGaps: function(){
     var spaces = $('.space');
     spaces.css('width',this.gap_width+'px');
@@ -142,6 +166,10 @@ var Init = {
      */
     connectors.css('margin-top',middle);
   },
+  
+  /**
+   * Makes anything inside a given item unselectable.
+   */
   makeUnselectable: function(selector){
     $(selector).css('-webkit-touch-callout', 'none');
     $(selector).css('-webkit-user-select', 'none');
