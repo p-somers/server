@@ -1,4 +1,8 @@
 <?php
+  /**
+   * This is a file that is accessed from a ajax call, and returns the contents of a given file
+   * IF the file is in the list of approved files. This is primarily used for dynamic page loading.
+   */
   function echoFile($filename) {
     $valid_files=array(
       'html/main.html',
