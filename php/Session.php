@@ -1,8 +1,8 @@
 <?php
+/**
+ * A work in very early progress
+ */
 $f = filter_input(INPUT_POST, 'method');
-//$f();
-  error_log( "done",3,"/var/www/errors.log");
-  error_log( "done",1,"snoboarder31@gmail.com");
 function start_session(){
   session_start();
   //include code keeping track of views
