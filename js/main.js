@@ -1,3 +1,7 @@
+/**
+ * These functions are for handling user sessions.
+ * Note: this is a work in progress and in very early stages.
+ */
 function showLogin(){
   $('#login_dialog').dialog('open');
 }
