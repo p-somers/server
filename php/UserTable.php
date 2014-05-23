@@ -1,4 +1,8 @@
 <?php
+/**
+ * A system for managing the user database
+ * Still in very early stages
+ */
 include("./DB.php");
 class UserTable {
   private static $table    = "users";
